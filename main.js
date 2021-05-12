@@ -35,3 +35,14 @@
 // (5 < 6 < 7)  =>  (true < 7)  => (1 < 7)  => true
 // (7 > 6 > 5)  =>  (true > 5)  => (1 > 5)  => false
 
+//5. prevent user to add more properties to an object
+//answer: use Object.freeze() for that
+
+let profile = {
+    name: 'techsith'
+};
+
+Object.freeze(profile);
+profile.age = 3;
+
+console.log(profile);
