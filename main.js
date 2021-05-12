@@ -37,12 +37,33 @@
 
 //5. prevent user to add more properties to an object
 //answer: use Object.freeze() for that
+// in order to allow the user to modify the existing  property but still prevent adding new ones you can use Object.seal() instead
+//in order to change only a specific property and leave the rest as they are use:  Object.defineProperty(profile, 'age', {
+     // value: 3,
+     //writable: false
+//})
 
 let profile = {
-    name: 'techsith'
+    name: 'techsith',
+    age: 3
 };
 
-Object.freeze(profile);
-profile.age = 3;
+// Object.defineProperty(profile, 'age', {
+//     value: 3,
+//     writable: false
+// })
 
-console.log(profile);
+//Object.freeze(profile)
+
+//Object.seal(profile);
+
+// profile.name = 'mar';
+// profile.age = 4;
+
+// console.log(profile);
+
+//6. What is the answer of this?
+// the answer is -infinity. Why is that? Math.max() needs to compare two numbres in order to choose the max one.
+// if there are no numbers provided, the only option that is left is -infinity, and that is why it is returned.
+
+//console.log(Math.max()) // -infinity
