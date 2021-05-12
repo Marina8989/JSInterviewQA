@@ -10,17 +10,27 @@
 
 
 //3.make sur that var also becomes a block scoped like let
+//the answer is you will have to put the block into an Emideately Invoked Function. 
 
-let func = function() {
+// let func = function() {
   
-    {
-        (function() {
-           let l = 'let'
-           var v = 'var'
-        })(); 
-    }
+//     {
+//         (function() {
+//            let l = 'let'
+//            var v = 'var'
+//         })(); 
+//     }
 
-    console.log(l);
-    console.log(v);
-}
-func();
+//     console.log(l);
+//     console.log(v);
+// }
+// func();
+
+//4. What is the result?
+
+// console.log(5 < 6 < 7);// true
+// console.log(7 > 6 > 5); // false
+
+//this is what happens under the hood:
+// (5 < 6 < 7)  =>  (true < 7)  => (1 < 7)  => true
+// (7 > 6 > 5)  =>  (true > 5)  => (1 > 5)  => false
