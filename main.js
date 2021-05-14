@@ -71,14 +71,20 @@ let profile = {
 
 
 
-function removeExclamatinoMarks(s) {
-   let str = s.split('');
-   let arr = [];
-   for(let i = 0; i < str.length; i++) {
-      if(!(str[i] == '!')) {
-          arr.push(str[i]);
-      }
-   }
-   return arr.join('');
+let sortme = function(names) {
+   names.sort(function (a, b) {
+        return a.value > b.value;
+   })
 }
-console.log(removeExclamatinoMarks("Hello World!"))
+console.log(sortme(['one', 'two', 'three' ])); // one three two
+
+
+function sortMe(arr) {
+    return arr.sort((a, b) => { 
+        console.log(a);
+        console.log(b);
+    })
+    
+}
+console.log(sortMe([1,4,2]));
+console.log(sortMe(['b','a','c']));
