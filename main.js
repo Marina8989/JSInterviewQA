@@ -67,3 +67,18 @@ let profile = {
 // if there are no numbers provided, the only option that is left is -infinity, and that is why it is returned.
 
 //console.log(Math.max()) // -infinity
+
+
+
+
+function removeExclamatinoMarks(s) {
+   let str = s.split('');
+   let arr = [];
+   for(let i = 0; i < str.length; i++) {
+      if(!(str[i] == '!')) {
+          arr.push(str[i]);
+      }
+   }
+   return arr.join('');
+}
+console.log(removeExclamatinoMarks("Hello World!"))
