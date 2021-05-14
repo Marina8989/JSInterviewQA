@@ -80,9 +80,8 @@ console.log(sortme(['one', 'two', 'three' ])); // one three two
 
 
 function sortMe(arr) {
-    return arr.sort((a, b) => { 
-        console.log(a);
-        console.log(b);
+    arr.sort((a, b) => { 
+        return [a - b]; 
     })
     
 }
