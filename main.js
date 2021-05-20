@@ -71,19 +71,47 @@ let profile = {
 
 
 
-let sortme = function(names) {
-   names.sort(function (a, b) {
-        return a.value > b.value;
-   })
-}
-console.log(sortme(['one', 'two', 'three' ])); // one three two
+// let sortme = function(names) {
+//    names.sort(function (a, b) {
+//         return a.value > b.value;
+//    })
+// }
+// console.log(sortme(['one', 'two', 'three' ])); // one three two
 
 
-function sortMe(arr) {
-    arr.sort((a, b) => { 
-        return [a - b]; 
-    })
+// function sortMe(arr) {
+//     arr.sort((a, b) => { 
+     
+//     })
     
+// }
+// console.log(sortMe([1,4,2]));
+//console.log(sortMe(['b','a','c']));
+
+
+
+// function largestPairSum(numbers){
+//   //TODO: Write your Code here
+//   let max = Math.max(...numbers);
+//   let x = numbers.indexOf(max);
+//   let y = numbers.splice(x,1);
+//   let maxx = Math.max(...numbers);
+//   let sum = max + maxx;
+//    return sum;
+// }
+
+// console.log(largestPairSum([10,14,2,23,19])) // 42 ;
+
+
+
+
+function frankenSplice(arr1, arr2, n) {
+      let arr3 = arr2.slice();
+      console.log(arr3.splice(0, n).concat(arr1).concat(arr3.splice(0)));
+      console.log(arr2);
 }
-console.log(sortMe([1,4,2]));
-console.log(sortMe(['b','a','c']));
+
+console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1)); // [4, 1, 2, 3, 5]
+console.log(frankenSplice([1, 2], ["a", "b"], 1));//  ["a", 1, 2, "b"]
+
+  
