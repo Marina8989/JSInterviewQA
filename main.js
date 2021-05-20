@@ -103,15 +103,18 @@ let profile = {
 // console.log(largestPairSum([10,14,2,23,19])) // 42 ;
 
 
+function bouncer(arr) {
+   let newArr = [];
 
-
-function frankenSplice(arr1, arr2, n) {
-      let arr3 = arr2.slice();
-      console.log(arr3.splice(0, n).concat(arr1).concat(arr3.splice(0)));
-      console.log(arr2);
+   for(let i = 0; i < arr.length; i++) {
+      if(Boolean(arr[i]) == true){
+          newArr.push(arr[i]);
+      }
+   }
+   return newArr;
 }
 
-console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1)); // [4, 1, 2, 3, 5]
-console.log(frankenSplice([1, 2], ["a", "b"], 1));//  ["a", 1, 2, "b"]
+console.log(bouncer([7, "ate", "", false, 9])); // [7, "ate", 9]
+console.log(bouncer([false, null, 0, NaN, undefined, ""])); // []
 
   
