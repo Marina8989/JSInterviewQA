@@ -103,18 +103,20 @@ let profile = {
 // console.log(largestPairSum([10,14,2,23,19])) // 42 ;
 
 
-function bouncer(arr) {
-   let newArr = [];
 
-   for(let i = 0; i < arr.length; i++) {
-      if(Boolean(arr[i]) == true){
-          newArr.push(arr[i]);
-      }
-   }
-   return newArr;
+
+
+
+function sumAll(arr) {
+  let max = Math.max(...arr);
+  let min = Math.min(...arr);
+  let sum = 0;
+  for(let i = min; i <= max; i++) {
+     sum += i;
+  }
+  return sum;
 }
 
-console.log(bouncer([7, "ate", "", false, 9])); // [7, "ate", 9]
-console.log(bouncer([false, null, 0, NaN, undefined, ""])); // []
-
-  
+console.log(sumAll([1, 4])); // 10
+console.log(sumAll([5, 10])); // 45
+console.log(sumAll([10, 5])); // 45
