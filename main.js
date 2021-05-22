@@ -43,10 +43,10 @@
      //writable: false
 //})
 
-let profile = {
-    name: 'techsith',
-    age: 3
-};
+// let profile = {
+//     name: 'techsith',
+//     age: 3
+// };
 
 // Object.defineProperty(profile, 'age', {
 //     value: 3,
@@ -107,16 +107,49 @@ let profile = {
 
 
 
-function sumAll(arr) {
-  let max = Math.max(...arr);
-  let min = Math.min(...arr);
-  let sum = 0;
-  for(let i = min; i <= max; i++) {
-     sum += i;
-  }
-  return sum;
+// function sumAll(arr) {
+//   let max = Math.max(...arr);
+//   let min = Math.min(...arr);
+//   let sum = 0;
+//   for(let i = min; i <= max; i++) {
+//      sum += i;
+//   }
+//   return sum;
+// }
+
+// console.log(sumAll([1, 4])); // 10
+// console.log(sumAll([5, 10])); // 45
+// console.log(sumAll([10, 5])); // 45
+
+
+
+
+// function diffArray(arr1, arr2) {
+//    var newArr = [];
+   
+//    function check(first, second) {
+//       for(let i = 0; i < first.length; i++) {
+//          if(second.indexOf(first[i]) == -1) {
+//               newArr.push(first[i]);
+//          }
+//       }
+//    }
+//    check(arr1, arr2);
+//    check(arr2, arr1);
+
+//   return newArr;
+// }
+
+// console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); //[4]
+// console.log(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+
+
+
+
+
+
+function destroyer(arr, ...args) {
+  return arr.filter(item => !args.includes(item))
 }
 
-console.log(sumAll([1, 4])); // 10
-console.log(sumAll([5, 10])); // 45
-console.log(sumAll([10, 5])); // 45
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
