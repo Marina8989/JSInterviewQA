@@ -148,8 +148,28 @@
 
 
 
-function destroyer(arr, ...args) {
-  return arr.filter(item => !args.includes(item))
-}
+// function destroyer(arr, ...args) {
+//   return arr.filter(item => !args.includes(item))
+// }
 
-console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+// console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); // [1,1]
+
+
+
+
+//function whatIsInAName(collection, source) {
+  //var arr = [];
+  // Only change code below this line
+   
+  // let srcKeys = Object.keys(source);
+   
+  // return collection.filter(obj => {
+  //   return srcKeys.every(key => {
+  //     return obj.hasOwnProperty(key) && obj[key] === source[key];
+  //   })
+  // })
+   
+  //return arr;
+//}
+
+//console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
