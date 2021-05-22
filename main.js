@@ -173,3 +173,20 @@
 //}
 
 //console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+
+
+
+
+function translatePigLatin(str) {
+
+  if (str.match(/^[aeiou]/)) return str + "way";
+
+  const consonantCluster = str.match(/^[^aeiou]+/)[0];
+  console.log(consonantCluster);
+  return str.substring(consonantCluster.length) + consonantCluster + "ay";
+}
+  
+
+console.log(translatePigLatin("consonant")); // onsonantcay
+console.log(translatePigLatin("algorithm")); // algorithmway
+console.log(translatePigLatin("eight")); // eightway
