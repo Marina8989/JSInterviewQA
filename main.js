@@ -177,16 +177,39 @@
 
 
 
-function translatePigLatin(str) {
+// function translatePigLatin(str) {
 
-  if (str.match(/^[aeiou]/)) return str + "way";
+//   if (str.match(/^[aeiou]/)) return str + "way";
 
-  const consonantCluster = str.match(/^[^aeiou]+/)[0];
-  console.log(consonantCluster);
-  return str.substring(consonantCluster.length) + consonantCluster + "ay";
-}
+//   const consonantCluster = str.match(/^[^aeiou]+/)[0];
+//   console.log(consonantCluster);
+//   return str.substring(consonantCluster.length) + consonantCluster + "ay";
+// }
   
 
-console.log(translatePigLatin("consonant")); // onsonantcay
-console.log(translatePigLatin("algorithm")); // algorithmway
-console.log(translatePigLatin("eight")); // eightway
+// console.log(translatePigLatin("consonant")); // onsonantcay
+// console.log(translatePigLatin("algorithm")); // algorithmway
+// console.log(translatePigLatin("eight")); // eightway
+
+// s
+
+// function getChar(c) {
+//   return String.
+// }
+
+// console.log(getChar(55)); // '7'
+
+
+
+const flip=(d, a)=>{
+    return a.sort((num1, num2) => {
+      if(d == 'R'){
+         return num1 - num2;
+      }if(d == 'L') {
+         return num2 - num1;
+      }
+    })
+}
+
+console.log(flip('R', [3, 2, 1, 2]));
+console.log(flip('L', [1, 4, 5, 3, 5]));
