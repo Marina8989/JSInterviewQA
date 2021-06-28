@@ -201,15 +201,84 @@
 
 
 
-const flip=(d, a)=>{
-    return a.sort((num1, num2) => {
-      if(d == 'R'){
-         return num1 - num2;
-      }if(d == 'L') {
-         return num2 - num1;
-      }
-    })
+// const flip=(d, a)=>{
+//     return a.sort((num1, num2) => {
+//       if(d == 'R'){
+//          return num1 - num2;
+//       }if(d == 'L') {
+//          return num2 - num1;
+//       }
+//     })
+// }
+
+// console.log(flip('R', [3, 2, 1, 2]));
+// console.log(flip('L', [1, 4, 5, 3, 5]));
+
+
+// function kaprekarSplit(n){
+//   let sqr = String(Math.pow(n, 2));
+//   let x = sqr.split('');
+//   let y = x.slice(0, x.length/2);
+//   let z = x.slice(x.length/2);
+//   let sum = Number(y.join('')) + Number(z.join(''));
+  
+//   if(sum == n) {
+//       return y.length;
+//   }else {
+//     return -1;
+//   }  
+// }
+
+// console.log(kaprekarSplit(1)) // 0;
+// console.log(kaprekarSplit(9)) // 1;
+// console.log(kaprekarSplit(45)) //2;
+// console.log(kaprekarSplit(2223)) //3;
+// console.log(kaprekarSplit(5050)) // 4;
+// console.log(kaprekarSplit(5051)) // -1;
+// console.log(kaprekarSplit(99999)) // 5;
+
+
+
+// 9: 9^2=81 and 8+1=9.
+// 45: 45^2=2025 and 20+25=45
+// 2223: 2223^2=4941729 and 494+1729=2223
+
+
+
+// function removeChar(str){
+//   let arr = str.split('');
+//   arr.pop();
+//   arr.shift();
+//   return arr.join('');
+  
+// };
+
+// console.log(removeChar('eloquent')) //loquen
+// console.log(removeChar('country')) // ountr
+
+
+
+// function firstNonConsecutive (arr) {
+//   for(let i = 0; i < arr.length; i++) {
+//     if(arr[i]+ 1 !== arr[i + 1]) {
+//       return arr[i + 1];
+//    }
+//   }
+//   return null;
+// }
+
+// console.log(firstNonConsecutive([1,2,3,4,6,7,8]));
+
+
+
+function multiTable(number) {
+  let str = '';
+  for(let i = 1; i <= 10; i++) {
+      str+=`${i} * ${number} = ${i* number}\n`
+  }
+  return str;
 }
 
-console.log(flip('R', [3, 2, 1, 2]));
-console.log(flip('L', [1, 4, 5, 3, 5]));
+console.log(multiTable(5)) // '1 * 5 = 5\n2 * 5 = 10\n3 * 5 = 15\n4 * 5 = 20\n5 * 5 = 25\n6 * 5 = 30\n7 * 5 = 35\n8 * 5 = 40\n9 * 5 = 45\n10 * 5 = 50'
+console.log(multiTable(1))
+console.log(multiTable(7))
