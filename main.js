@@ -298,19 +298,45 @@
 
 // console.log(powersOfTwo(4))// [1, 2, 4, 8, 16]
 
-function multiplesOf3and5(number) {
-   let sum = 0;
-   for(let i = 0; i < number; i++) {
-      if(i % 5 == 0 || i % 3 == 0 ) {
-        sum += i;
-     }
-   }
-   return sum;
-}
+// function multiplesOf3and5(number) {
+//    let sum = 0;
+//    for(let i = 0; i < number; i++) {
+//       if(i % 5 == 0 || i % 3 == 0 ) {
+//         sum += i;
+//      }
+//    }
+//    return sum;
+// }
 
-console.log(multiplesOf3and5(1000));
+// console.log(multiplesOf3and5(1000));
 
 
 // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
 // Find the sum of all the multiples of 3 or 5 below the provided parameter value number.
+
+
+// function fiboEvenSum(n) {
+//     fiboEvenSum(n-1);
+//     console.log(n, n-1);
+    
+// }
+
+// console.log(fiboEvenSum(8)); // 10
+// // console.log(fiboEvenSum(10));  // 10
+// // console.log(fiboEvenSum(34)); // 44
+// // console.log(fiboEvenSum(60)); // 44
+
+const diff = (arr1, arr2) => [
+   ...arr1.filter(e => !arr2.includes(e)),
+   ...arr2.filter(e => !arr1.includes(e))
+]
+
+function sym(...args) {
+    let arr = [...new Set(args.reduce(diff))]
+    let newArr = arr.sort((a, b) => a - b);
+    return newArr;
+}
+  
+
+console.log(sym([1, 2, 3], [5, 2, 1, 4])); //[3, 4, 5]
