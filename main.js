@@ -366,8 +366,20 @@
 // }
 // console.log(digitize(35231)) // [1,3,2,5,3];
 
-var replaceDots = function(str) {
-  let arr = str.split('.').join('-');
- return arr;
+// var replaceDots = function(str) {
+//   let arr = str.split('.').join('-');
+//  return arr;
+// }
+// console.log(replaceDots("one.two.three")); //"one-two-three"
+
+
+
+function squareSum(numbers){
+  let sum = 0;
+  numbers.forEach(num => {
+    let x = Math.pow(num, 2);
+    sum += x;
+  })
+  return sum
 }
-console.log(replaceDots("one.two.three")); //"one-two-three"
+console.log(squareSum([1,2])); // 5
