@@ -327,16 +327,41 @@
 // // console.log(fiboEvenSum(34)); // 44
 // // console.log(fiboEvenSum(60)); // 44
 
-const diff = (arr1, arr2) => [
-   ...arr1.filter(e => !arr2.includes(e)),
-   ...arr2.filter(e => !arr1.includes(e))
-]
+// const diff = (arr1, arr2) => [
+//    ...arr1.filter(e => !arr2.includes(e)),
+//    ...arr2.filter(e => !arr1.includes(e))
+// ]
 
-function sym(...args) {
-    let arr = [...new Set(args.reduce(diff))]
-    let newArr = arr.sort((a, b) => a - b);
-    return newArr;
-}
+// function sym(...args) {
+//     let arr = [...new Set(args.reduce(diff))]
+//     let newArr = arr.sort((a, b) => a - b);
+//     return newArr;
+// }
   
 
-console.log(sym([1, 2, 3], [5, 2, 1, 4])); //[3, 4, 5]
+//console.log(sym([1, 2, 3], [5, 2, 1, 4])); //[3, 4, 5]
+
+
+// function fiboEvenSum(n) {
+//   let sum = [];
+//   let feb = 1;
+//     for(let i = 0; i < n; i++) {
+//       console.log(i);
+//       console.log(feb + i);
+//       sum.push(feb+i);
+//       console.log(sum);
+//       feb = i;
+//     }
+// }
+// console.log(fiboEvenSum(8));
+
+
+function digitize(n) {
+  let str = String(n).split('').reverse();
+  let arr = [];
+  str.forEach(num => {
+    arr.push(Number(num));
+  })
+  return arr;
+}
+console.log(digitize(35231)) // [1,3,2,5,3];
