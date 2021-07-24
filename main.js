@@ -356,12 +356,18 @@
 // console.log(fiboEvenSum(8));
 
 
-function digitize(n) {
-  let str = String(n).split('').reverse();
-  let arr = [];
-  str.forEach(num => {
-    arr.push(Number(num));
-  })
-  return arr;
+// function digitize(n) {
+//   let str = String(n).split('').reverse();
+//   let arr = [];
+//   str.forEach(num => {
+//     arr.push(Number(num));
+//   })
+//   return arr;
+// }
+// console.log(digitize(35231)) // [1,3,2,5,3];
+
+var replaceDots = function(str) {
+  let arr = str.split('.').join('-');
+ return arr;
 }
-console.log(digitize(35231)) // [1,3,2,5,3];
+console.log(replaceDots("one.two.three")); //"one-two-three"
