@@ -374,12 +374,53 @@
 
 
 
-function squareSum(numbers){
-  let sum = 0;
-  numbers.forEach(num => {
-    let x = Math.pow(num, 2);
-    sum += x;
-  })
-  return sum
+// function squareSum(numbers){
+//   let sum = 0;
+//   numbers.forEach(num => {
+//     let x = Math.pow(num, 2);
+//     sum += x;
+//   })
+//   return sum
+// }
+// console.log(squareSum([1,2])); // 5
+
+
+// function countBy(x, n) {
+//   let arr = [];
+//   let num = x * n;
+//   for(let i = x; i < num; i+x) {
+//      arr.push(i);
+//   }
+//   //console.log(num);
+// }
+// console.log(countBy(1,10)) // [1,2,3,4,5,6,7,8,9,10]
+// console.log(countBy(2,5)) // [2,4,6,8,10]
+
+
+
+// function isLeapYear(year) {
+//   if(Number.isInteger(year / 4) || Number.isInteger(year / 400)) {
+//        return true;
+//   }else {
+//     return false;
+//   }
+  
+// }
+// console.log(isLeapYear(1234)); // false, 'Year 1234'
+// console.log(isLeapYear(1984)); // true, 'Year 1984'
+
+
+function getArr(arr, target) {
+  let newArr =[];
+   for(let i = 0; i < arr.length-1; i++) {
+      for(let j = i+1; j < arr.length; j++) {
+        if(arr[i] + arr[j] == target){
+          newArr.push(i, j);
+        }
+      }
+   }
+   return newArr;
 }
-console.log(squareSum([1,2])); // 5
+console.log(getArr([2,7,11,15], 9)) // [0,1]
+console.log(getArr([3,2,3], 6)) // [0,2]
+console.log(getArr([3,2,4], 6)); // [1,2]
