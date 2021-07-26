@@ -426,25 +426,63 @@
 // console.log(getArr([3,2,4], 6)); // [1,2]
 
 
-var reverse = function(x) {
-  const str = String(x).split('').reverse();
+// var reverse = function(x) {
+//   const str = String(x).split('').reverse();
   
-  if(str == '0') {
-    return Number(str);
-  }
-  if(str[str.length -1] == '-' ) {
-    str.pop();
-    str.unshift('-');
-    return Number(str.join(''));
-  }
-  if(str[0] == '0') {
-    str.shift();
-    return Number(str.join(''));
-  }
-  return Number(str.join(''));
-};
+//   if(str == '0') {
+//     return Number(str);
+//   }
+//   if(str[str.length -1] == '-' ) {
+//     str.pop();
+//     str.unshift('-');
+//     return Number(str.join(''));
+//   }
+//   if(str[0] == '0') {
+//     str.shift();
+//     return Number(str.join(''));
+//   }
+//   return Number(str.join(''));
+// };
 
-console.log(reverse(321)) // 123
-console.log(reverse(-321)) // -123
-console.log(reverse(120)) // 21
-console.log(reverse(0)) // 0
+// console.log(reverse(321)) // 123
+// console.log(reverse(-321)) // -123
+// console.log(reverse(120)) // 21
+// console.log(reverse(0)) // 0
+
+
+var romanToInt = function(s) {
+  let m = {
+    I: 1,
+    IV: 4,
+    V: 5,
+    IX: 9,
+    X: 10,
+    XL: 40,
+    L: 50,
+    XC: 90,
+    C: 100,
+    CD: 400,
+    D: 500,
+    CM: 900,
+    M: 1000
+  }
+   
+    let ans = m[s[0]];
+    
+    for (let i = 1; i < s.length; i++) {
+        let prevChar = s[i-1];
+        let char = s[i];
+        if (m[prevChar] < m[char]) ans += m[prevChar + char] - m[prevChar]; // for the edge cases (IV)
+        else ans += m[char];
+    }
+    return ans;
+} 
+console.log(romanToInt('III')); //3
+console.log(romanToInt("LVIII")); // 58
+console.log(romanToInt("MCMXCIV")); //1994
+
+
+
+// I can be placed before V (5) and X (10) to make 4 and 9. 
+// X can be placed before L (50) and C (100) to make 40 and 90. 
+// C can be placed before D (500) and M (1000) to make 400 and 900.
