@@ -410,17 +410,41 @@
 // console.log(isLeapYear(1984)); // true, 'Year 1984'
 
 
-function getArr(arr, target) {
-  let newArr =[];
-   for(let i = 0; i < arr.length-1; i++) {
-      for(let j = i+1; j < arr.length; j++) {
-        if(arr[i] + arr[j] == target){
-          newArr.push(i, j);
-        }
-      }
-   }
-   return newArr;
-}
-console.log(getArr([2,7,11,15], 9)) // [0,1]
-console.log(getArr([3,2,3], 6)) // [0,2]
-console.log(getArr([3,2,4], 6)); // [1,2]
+// function getArr(arr, target) {
+//   let newArr =[];
+//    for(let i = 0; i < arr.length-1; i++) {
+//       for(let j = i+1; j < arr.length; j++) {
+//         if(arr[i] + arr[j] == target){
+//           newArr.push(i, j);
+//         }
+//       }
+//    }
+//    return newArr;
+// }
+// console.log(getArr([2,7,11,15], 9)) // [0,1]
+// console.log(getArr([3,2,3], 6)) // [0,2]
+// console.log(getArr([3,2,4], 6)); // [1,2]
+
+
+var reverse = function(x) {
+  const str = String(x).split('').reverse();
+  
+  if(str == '0') {
+    return Number(str);
+  }
+  if(str[str.length -1] == '-' ) {
+    str.pop();
+    str.unshift('-');
+    return Number(str.join(''));
+  }
+  if(str[0] == '0') {
+    str.shift();
+    return Number(str.join(''));
+  }
+  return Number(str.join(''));
+};
+
+console.log(reverse(321)) // 123
+console.log(reverse(-321)) // -123
+console.log(reverse(120)) // 21
+console.log(reverse(0)) // 0
