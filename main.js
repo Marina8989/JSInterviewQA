@@ -450,39 +450,108 @@
 // console.log(reverse(0)) // 0
 
 
-var romanToInt = function(s) {
-  let m = {
-    I: 1,
-    IV: 4,
-    V: 5,
-    IX: 9,
-    X: 10,
-    XL: 40,
-    L: 50,
-    XC: 90,
-    C: 100,
-    CD: 400,
-    D: 500,
-    CM: 900,
-    M: 1000
-  }
+// var romanToInt = function(s) {
+//   let m = {
+//     I: 1,
+//     IV: 4,
+//     V: 5,
+//     IX: 9,
+//     X: 10,
+//     XL: 40,
+//     L: 50,
+//     XC: 90,
+//     C: 100,
+//     CD: 400,
+//     D: 500,
+//     CM: 900,
+//     M: 1000
+//   }
    
-    let ans = m[s[0]];
+//     let ans = m[s[0]];
     
-    for (let i = 1; i < s.length; i++) {
-        let prevChar = s[i-1];
-        let char = s[i];
-        if (m[prevChar] < m[char]) ans += m[prevChar + char] - m[prevChar]; // for the edge cases (IV)
-        else ans += m[char];
-    }
-    return ans;
-} 
-console.log(romanToInt('III')); //3
-console.log(romanToInt("LVIII")); // 58
-console.log(romanToInt("MCMXCIV")); //1994
+//     for (let i = 1; i < s.length; i++) {
+//         let prevChar = s[i-1];
+//         let char = s[i];
+//         if (m[prevChar] < m[char]) ans += m[prevChar + char] - m[prevChar]; // for the edge cases (IV)
+//         else ans += m[char];
+//     }
+//     return ans;
+// } 
+// console.log(romanToInt('III')); //3
+// console.log(romanToInt("LVIII")); // 58
+// console.log(romanToInt("MCMXCIV")); //1994
 
 
 
 // I can be placed before V (5) and X (10) to make 4 and 9. 
 // X can be placed before L (50) and C (100) to make 40 and 90. 
 // C can be placed before D (500) and M (1000) to make 400 and 900.
+
+
+
+// var addTwoNumbers = function(l1, l2) {
+//   let newArr = [];
+
+//   for(let i = l1.length-1; i >= 0; i--) {
+//     //console.log(l1[i]);
+//     for(let j = l2.length-1; j >= 0; j--) {
+//      console.log(l2[j]);
+//      newArr.push(l1[i] + l2[j]);
+//     }
+//   }
+//     console.log(newArr)
+// };
+// console.log(addTwoNumbers([7,2,4,3], [5,6,4])); // [7,8,0,7]
+
+
+
+// function mxdiflg(a1, a2) {
+//     let randNumOne = Math.floor(Math.random() * a1.length);
+//     let randNumTwo = Math.floor(Math.random() * a2.length);
+
+//     if(!randNumOne || !randNumTwo) {
+//         return -1;
+//     }else {
+//        let num = Math.abs(randNumOne - randNumTwo)
+//        return num;
+//     }
+// }
+
+//  var s1 = ["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"];
+//  var s2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"];
+
+// console.log(mxdiflg(s1, s2)); // 13
+
+
+// var mergeTwoLists = function(l1, l2) {
+//     let x = l1.concat(l2);
+//     return x.sort((a,b) => {
+//       return a - b;
+//     })
+    
+// };
+
+// console.log(mergeTwoLists([1,2,4],[1,3,4])) // [1,1,2,3,4,4]
+
+
+// function seatsInTheater(nCols, nRows, col, row) {
+//     let x = nCols.splice(col);
+//     console.log(x);
+// }
+
+// console.log(seatsInTheater(16, 11, 5, 3));
+
+
+// For nCols = 16, nRows = 11, col = 5, and row = 3, the output should be
+// seatsInTheater(nCols, nRows, col, row) = 96.
+
+
+// function maxMultiple(divisor, bound) {
+//    let x = 0;
+//    for(let i = divisor; i <= bound; i+=divisor) {
+//       x += divisor;
+//    }
+//   return x;
+// }
+
+// console.log(maxMultiple(3, 10))
