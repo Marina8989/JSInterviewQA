@@ -555,3 +555,64 @@
 // }
 
 // console.log(maxMultiple(3, 10))
+
+
+// function circleOfNumbers(n, firstNumber) {
+//    return ((n-1) - firstNumber);
+// }
+// console.log(circleOfNumbers(10, 2));
+
+
+// function pageLoad() {
+//   //document.getElementById('text').value = localStorage.getItem('food');
+//   document.getElementById('option').value = localStorage.getItem('food');
+
+//   //document.getElementById('text').addEventListener('input', loadedInput);
+//   document.getElementById('option').addEventListener('change', loadedInput);
+// }
+
+// function loadedInput(e) { 
+//   localStorage.setItem('food', e.target.value);
+// }
+
+//document.addEventListener('DOMContentLoaded', pageLoad)
+
+
+
+
+// const app = document.getElementById('app'); // don't forget to create an html element
+// fetch('https://rickandmortyapi.com/api/episode/4')
+//   .then(response => response.json())
+//   .then(json => {
+//     app.innerText = json.episode
+//   })
+
+async function info() {
+  const div = document.createElement('div');
+  const pic = document.createElement('img');
+  const body = document.querySelector('body');
+  try{
+      const responce = await fetch('https://dog.ceo/api/breeds/image/random');
+      const data = await responce.json();
+      console.log(data);
+      pic.setAttribute('src', data.message);
+      div.append(pic);
+      body.append(div);
+  }catch(error){
+      console.log('error:', error)
+  }
+
+  
+  pic.setAttribute('src', data.message);
+  div.append(pic);
+  body.append(div);
+  console.log(data);
+  console.log(data.message);
+  console.log(data.status);
+}
+
+async function resp() {
+   const x = info();
+   return x;
+}
+resp();
