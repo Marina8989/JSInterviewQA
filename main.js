@@ -587,32 +587,108 @@
 //     app.innerText = json.episode
 //   })
 
-async function info() {
-  const div = document.createElement('div');
-  const pic = document.createElement('img');
-  const body = document.querySelector('body');
-  try{
-      const responce = await fetch('https://dog.ceo/api/breeds/image/random');
-      const data = await responce.json();
-      console.log(data);
-      pic.setAttribute('src', data.message);
-      div.append(pic);
-      body.append(div);
-  }catch(error){
-      console.log('error:', error)
-  }
+// async function info() {
+//   const div = document.createElement('div');
+//   const pic = document.createElement('img');
+//   const body = document.querySelector('body');
+//   try{
+//       const responce = await fetch('https://dog.ceo/api/breeds/image/random');
+//       const data = await responce.json();
+//       console.log(data);
+//       pic.setAttribute('src', data.message);
+//       div.append(pic);
+//       body.append(div);
+//   }catch(error){
+//       console.log('error:', error)
+//   }
 
   
-  pic.setAttribute('src', data.message);
-  div.append(pic);
-  body.append(div);
-  console.log(data);
-  console.log(data.message);
-  console.log(data.status);
-}
+//   pic.setAttribute('src', data.message);
+//   div.append(pic);
+//   body.append(div);
+//   console.log(data);
+//   console.log(data.message);
+//   console.log(data.status);
+// }
 
-async function resp() {
-   const x = info();
-   return x;
+// async function resp() {
+//    const x = info();
+//    return x;
+// }
+// resp();
+
+
+
+// const sentence = 'Hi i am Marina and i live in San Francisco';
+
+// function getMostRepeatedChar(string) {
+//     let count = 0;
+//     let splittedString = string.split('');
+//     console.log(splittedString);
+//  }
+// console.log(getMostRepeatedChar(sentence))
+
+
+
+
+
+function checkPalindrome(inputString) {
+  let word = [];
+  let arr = inputString.split('');
+  for(let i = arr.length-1; i>=0; i--){
+      word.push(arr[i])
+  }
+ 
+     if(word.join('') === arr.join('')){
+       return true;
+     }else{
+       return false;
+     }
 }
-resp();
+console.log(checkPalindrome("aabaa"));
+console.log(checkPalindrome("abac"));
+
+
+
+
+
+
+
+
+
+
+// One night you go for a ride on your motorcycle. At 00:00 you start your engine, and the built-in timer automatically begins counting the length of your ride, in minutes. Off you go to explore the neighborhood.
+
+// When you finally decide to head back, you realize there's a chance the bridges on your route home are up, leaving you stranded! Unfortunately, you don't have your watch on you and don't know what time it is. All you know thanks to the bike's timer is that n minutes have passed since 00:00.
+
+// Using the bike's timer, calculate the current time. Return an answer as the sum of digits that the digital timer in the format hh:mm would show.
+
+// Example
+
+// For n = 240, the output should be
+// lateRide(n) = 4.
+
+// Since 240 minutes have passed, the current time is 04:00. The digits sum up to 0 + 4 + 0 + 0 = 4, which is the answer.
+
+// For n = 808, the output should be
+// lateRide(n) = 14.
+
+// 808 minutes mean that it's 13:28 now, so the answer should be 1 + 3 + 2 + 8 = 14.
+
+// function lateRide(n) {
+//    let num = Math.floor((n / 60));
+//    console.log(num);
+//    let x = (1439 - (num * 60));
+//    console.log(x)
+//    let y = (num.toFixed().toString() + x.toFixed().toString()).split('')
+//    console.log(y);
+//    let sum = 0;
+   
+//    for(let i = 0; i < y.length; i++) {
+//         sum += Number(y[i])
+//    }
+//      return sum;
+// }
+// console.log(lateRide(808));
+// console.log(lateRide(240));
+// console.log(lateRide(1439)); //19
