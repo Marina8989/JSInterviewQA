@@ -632,24 +632,34 @@
 
 
 
-function checkPalindrome(inputString) {
-  let word = [];
-  let arr = inputString.split('');
-  for(let i = arr.length-1; i>=0; i--){
-      word.push(arr[i])
-  }
+// function checkPalindrome(inputString) {
+//   let word = [];
+//   let arr = inputString.split('');
+//   for(let i = arr.length-1; i>=0; i--){
+//       word.push(arr[i])
+//   }
  
-     if(word.join('') === arr.join('')){
-       return true;
-     }else{
-       return false;
-     }
-}
-console.log(checkPalindrome("aabaa"));
-console.log(checkPalindrome("abac"));
+//      if(word.join('') === arr.join('')){
+//        return true;
+//      }else{
+//        return false;
+//      }
+// }
+// console.log(checkPalindrome("aabaa"));
+// console.log(checkPalindrome("abac"));
 
+// const inputArray = [3, 6, -2, -5, 7, 3];
 
+// function adjacentElementsProduct(arr) {
+//   const arrNum = [];
+//   for(let i = 0; i < arr.length-1; i++){
+//      const productArr = arr[i] * arr[i+1];
+//      arrNum.push(productArr);
+//   }
+//   return Math.max(...arrNum);
+// }
 
+// console.log(adjacentElementsProduct(inputArray)); // 21
 
 
 
@@ -692,3 +702,33 @@ console.log(checkPalindrome("abac"));
 // console.log(lateRide(808));
 // console.log(lateRide(240));
 // console.log(lateRide(1439)); //19
+
+
+
+// function makeArrayConsecutive2(statues) {
+//     const sortedArr = statues.sort((a,b) => {
+//         return a - b;
+//     })
+//     let num = 0;
+//     let arrEl = sortedArr[0];
+    
+//     for(let i = 0; i < sortedArr.length; i++) {
+//       if(arrEl !== sortedArr[i]) {
+//          num+=1;
+//          arrEl = sortedArr[i];
+//       }
+//     }
+//     return num;
+// }
+// console.log(makeArrayConsecutive2([6, 2, 3, 8]))
+// console.log(makeArrayConsecutive2([0, 3]))
+
+
+function makeArrayConsecutive2(sequence) {
+  console.log(Math.max(...sequence))
+  console.log(Math.min(...sequence))
+  let x =  Math.max(...sequence)-Math.min(...sequence)+1 -sequence.length
+  console.log(x)
+}
+console.log(makeArrayConsecutive2([6, 2, 3, 8])) //3
+console.log(makeArrayConsecutive2([0, 3])) //2
