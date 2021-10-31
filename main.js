@@ -724,11 +724,29 @@
 // console.log(makeArrayConsecutive2([0, 3]))
 
 
-function makeArrayConsecutive2(sequence) {
-  console.log(Math.max(...sequence))
-  console.log(Math.min(...sequence))
-  let x =  Math.max(...sequence)-Math.min(...sequence)+1 -sequence.length
-  console.log(x)
+// function makeArrayConsecutive2(sequence) {
+//   console.log(Math.max(...sequence))
+//   console.log(Math.min(...sequence))
+//   let x =  Math.max(...sequence)-Math.min(...sequence)+1-sequence.length
+//   console.log(x)
+// }
+// console.log(makeArrayConsecutive2([6, 2, 3, 8])) //3
+// console.log(makeArrayConsecutive2([0, 3])) //2
+
+
+function almostIncreasingSequence(sequence) {
+    const sorted = sequence.sort((a,b) => {
+      return a - b;
+    })
+    console.log(sorted)
+
+    if(sorted === sequence) {
+       console.log(true)
+    }else {
+       console.log(false)
+    }
+    
 }
-console.log(makeArrayConsecutive2([6, 2, 3, 8])) //3
-console.log(makeArrayConsecutive2([0, 3])) //2
+
+console.log(almostIncreasingSequence([1, 3, 2, 1]))// false
+console.log(almostIncreasingSequence([1, 3, 2])) // true
